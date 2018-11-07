@@ -1,0 +1,4 @@
+Name: Qi
+Github: nicolehq
+Team#: 4
+Date:11/05/18
