@@ -12,5 +12,6 @@ public class HairMonopoly {
     System.out.println("Work will increase your money and make you tired.");
     System.out.println("Haircare will cost you money but make you less tired.");
     System.out.println("If you are too tired, you will lose hair.");
+    //wowowowo
   }
 }
