@@ -14,6 +14,7 @@ public class HairMonopoly {
     System.out.println("If you are too tired, you will lose hair.");
     //wowowowo
     //hjkjgk
+    //....
   }
 }
 
