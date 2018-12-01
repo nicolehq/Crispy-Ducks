@@ -15,7 +15,7 @@ public class HairMonopoly {
     for(int i=start;i<=end;i++){
       int day = i;
       System.out.printf("****************************%n Day %d%n",day);
-      System.out.println("Good morning. There are a bunch of hairs on your pillow (-5%).");
+      System.out.println("Good morning. There is a bunch of hairs on your pillow (-5%).");
       stats[0] = stats[0]-5;
       System.out.println("Hair: "+stats[0]+"%  Money: $"+stats[1]+"  Knowledge: "+stats[2]+"%");
       activity(stats);
