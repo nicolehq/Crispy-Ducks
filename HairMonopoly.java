@@ -100,14 +100,14 @@ public class HairMonopoly {
   public static int[] work(int stats[]){
     stats[0] = stats[0]- 5;
     stats[1] = stats[1] + 10;
-    System.out.println("You lose %5 hair and obtain 10 dollors.");
+    System.out.println("You lose 5% hair and obtain 10 dollors.");
     return stats;
   }
 
   public static int[] study(int stats[]){
     stats[0] = stats[0]- 15;
     stats[2] = stats[2] + 10;
-    System.out.println("You lose %15 hair and obtain %10 knowledge.");
+    System.out.println("You lose 15% hair and obtain %10 knowledge.");
     return stats;
   }
 }
