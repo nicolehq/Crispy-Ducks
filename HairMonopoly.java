@@ -6,8 +6,8 @@ public class HairMonopoly {
     int[] stats = {70,0,60};
     int start=0;
     int end=0;
-    loop(stats,start =1, end = 4);
-    Day5(stats,start,end);
+    loop(stats,start =1, end = 5);
+    Day6(stats,start,end);
     //**hairmonopoly.finalday(stats);
   }
 
@@ -53,7 +53,7 @@ public class HairMonopoly {
   }
 
   /**************/
-  public static void Day5(int[] stats,int start,int end){
+  public static void Day6(int[] stats,int start,int end){
     System.out.println("Surprise! Do you want to open it? yes/no");
     while (HairMonopoly.keepGoing){
       String choice = TextIO.getlnWord();
