@@ -1,6 +1,6 @@
 package project;
 public class Surprise{
-  public static void surprise(int[] stats){
+  public static int[] surprise(int[] stats){
     System.out.println("What a wonderful weekend! Your friend Tim invites you to do 3 activities with him.");
     System.out.println("Do you want to go to the casino-you can invest money and probably win more");
     System.out.println("Or enjoy a scalp massage-Tim treats you and you may gain some hair");
@@ -24,6 +24,7 @@ public class Surprise{
     if(choice.equals("L")){
       library(stats);
     }
+    return stats;
   }
 
 

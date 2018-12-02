@@ -1,3 +1,4 @@
+package project;
 public class HairMonopoly {
   public static boolean keepGoing = true;
   public static void main(String[] args){
@@ -57,6 +58,7 @@ public class HairMonopoly {
     while (HairMonopoly.keepGoing){
       String choice = TextIO.getlnWord();
       if(choice.equals("yes")){
+        Surprise.surprise(stats);
         //**hairmonopoly.Surprise(stats);
         break;
       } else if (choice.equals("no")){
