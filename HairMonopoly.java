@@ -1,13 +1,13 @@
 public class HairMonopoly {
   public static boolean keepGoing = true;
   public static void main(String[] args){
-    intro();
+    //**hairmonoply.intro();
     int[] stats = {70,0,60};
     int start=0;
     int end=0;
     loop(stats,start =1, end = 4);
     Day5(stats,start,end);
-    //**finalday(stats);
+    //**hairmonopoly.finalday(stats);
   }
 
 /*****************/
@@ -57,7 +57,7 @@ public class HairMonopoly {
     while (HairMonopoly.keepGoing){
       String choice = TextIO.getlnWord();
       if(choice.equals("yes")){
-        //**Surprise();
+        //**hairmonopoly.Surprise(stats);
         break;
       } else if (choice.equals("no")){
         int[] statss = stats;
@@ -71,23 +71,6 @@ public class HairMonopoly {
     }
   }
 
-/********/
-  public static void intro(){
-    System.out.println("Welcome to the game of Hair Monopoly!");
-    System.out.println();
-    System.out.println("Here is the instruction of the game: ");
-    System.out.println("You are a super busy senior student, and your midterm is one week from now.");
-    System.out.println("You will also take your senior portrait on that day.");
-    System.out.println("In case to pass this game, you will need to look dashing on the picture as well as pass your exam.");
-    System.out.println("There are three activities available for you everyday: Study, work and haircare.");
-    System.out.println("You can choose two of them each day.");
-    System.out.println("Study will increase your study ability but make you tired.");
-    System.out.println("Work will increase your money and make you tired.");
-    System.out.println("Haircare will cost you money but make you less tired.");
-    System.out.println("If you are too tired, you will lose hair.");
-    System.out.println("****************************");
-    System.out.println("");
-  }
 
 /********/
   public static int[] haircare(int[] stats){
