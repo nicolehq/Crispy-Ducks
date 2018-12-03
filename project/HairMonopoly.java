@@ -3,7 +3,7 @@ public class HairMonopoly {
   public static boolean keepGoing = true;
   public static void main(String[] args){
     intro();
-    int[] stats = {70,0,60};
+    int[] stats = {70,10,60};
     int start=0;
     int end=0;
     loop(stats,start =1, end = 5);
@@ -54,21 +54,32 @@ public class HairMonopoly {
 
   /**************/
   public static void Day6(int[] stats,int start,int end){
+    System.out.printf("**************************** Weekend is coming%n");
     System.out.println("Surprise! Do you want to open it? yes/no");
-    while (HairMonopoly.keepGoing){
-      String choice = TextIO.getlnWord();
-      if(choice.equals("yes")){
-        Surprise.surprise(stats);
-        break;
-      } else if (choice.equals("no")){
-        int[] statss = stats;
-        int startt = start;
-        int endd = end;
-        loop(stats,start=6,end=7);
-        break;
-      } else{
-        System.out.println("Error! Please re-enter:");
+    boolean open = TextIO.getlnBoolean();
+    if(open){
+      System.out.println("Now you have the opportunity to participate in two events during the weekend. ");
+      System.out.println("If you don't want to use this opportunity, you would return to your normal schedule. (yes/no)");
+      while (HairMonopoly.keepGoing){
+        String choice = TextIO.getlnWord();
+        if(choice.equals("yes")){
+          Surprise.surprise(stats);
+          break;
+        } else if (choice.equals("no")){
+          int[] statss = stats;
+          int startt = start;
+          int endd = end;
+          loop(stats,start=6,end=7);
+          break;
+        } else{
+          System.out.println("Error! Please re-enter:");
+        }
       }
+    }else{
+      int[] statss = stats;
+      int startt = start;
+      int endd = end;
+      loop(stats,start=6,end=7);
     }
   }
 
@@ -91,24 +102,51 @@ public class HairMonopoly {
 
 
 /********/
-  public static int[] haircare(int[] stats){
-    stats[0]=stats[0]+10;
-    stats[1]=stats[1]-10;
-    System.out.println("You've bought a magic hair potion, increase 10% hair, lose 10 dollars");
-    return stats;
-  }
+public static int[] haircare(int[] stats){
+   if(stats[1]==0){
+     System.out.println("You don't have any money left. Please choose another activity.");
+     stats = calculate(stats);
+   }else if(stats[1]>0){
+     stats[1]=stats[1]-10;
+     if(stats[0]<0){
+       stats[0]=0;
+     }else if(stats[0]>100){
+       stats[0]=100;
+     }else{
+       stats[0]=stats[0]+10;
+     }
+     System.out.println("You've bought a magic hair potion, increase 10% hair, lose 10 dollars.");
+   }
+   return stats;
+ }
 
-  public static int[] work(int stats[]){
-    stats[0] = stats[0]- 5;
-    stats[1] = stats[1] + 10;
-    System.out.println("You lose 5% hair and obtain 10 dollors.");
-    return stats;
-  }
+ public static int[] work(int stats[]){
+   stats[0] = stats[0]- 5;
+   stats[1] = stats[1] + 10;
+   if(stats[0]<0){
+     stats[0]=0;
+   }else if(stats[0]>100){
+     stats[0]=100;
+   }
+   if(stats[1]<0){
+     stats[1]=0;
+   }
+   System.out.println("You lose 5% hair and obtain 10 dollors.");
+   return stats;
+ }
 
-  public static int[] study(int stats[]){
-    stats[0] = stats[0]- 15;
-    stats[2] = stats[2] + 10;
-    System.out.println("You lose 15% hair and obtain %10 knowledge.");
-    return stats;
-  }
+ public static int[] study(int stats[]){
+   stats[0] = stats[0]- 15;
+   stats[2] = stats[2] + 10;
+   if(stats[0]<0){
+     stats[0]=0;
+   }else if(stats[0]>100){
+     stats[0]=100;
+   }
+   if(stats[2]>0){
+     stats[2]=100;
+   }
+   System.out.println("You lose 15% hair and obtain %10 knowledge.");
+   return stats;
+ }
 }
