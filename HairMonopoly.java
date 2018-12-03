@@ -1,5 +1,4 @@
-import project.Surprise;
-import project.FinalDay;
+package project;
 public class HairMonopoly {
   public static boolean keepGoing = true;
   public static void main(String[] args){
@@ -9,7 +8,7 @@ public class HairMonopoly {
     int end=0;
     loop(stats,start =1, end = 5);
     Day6(stats,start,end);
-    FinalDay.finalday(stats);
+    //**hairmonopoly.finalday(stats);
   }
 
 /*****************/
