@@ -1,6 +1,9 @@
 package project;
 public class FinalDay{
   public static void finalday(int[] stats){
+    System.out.println();
+    System.out.println();
+    System.out.println("**************************");
     System.out.println("Good morning! Today is your big day! You will take the senior portrait and the midterm.");
     System.out.println("Hair: "+stats[0]+"%  Money: $"+stats[1]+"  Knowledge: "+stats[2]+"%");
     System.out.println("On your way to photoshoot, you pass by an mysterious street vendor with only one mechardise:...A PERFECT-LOOKING WIG!");

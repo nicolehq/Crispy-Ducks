@@ -16,8 +16,9 @@ public class HairMonopoly {
     for(int i=start;i<=end;i++){
       int day = i;
       System.out.printf("****************************%n Day %d%n",day);
-      System.out.println("Good morning. There is a bunch of hairs on your pillow (-5%).");
+      System.out.println("Good morning. There is a bunch of hairs on your pillow (-5%). You forgot what you have learnt. (-5%)");
       stats[0] = stats[0]-5;
+      stats[2] = stats[2]-5;
       System.out.println("Hair: "+stats[0]+"%  Money: $"+stats[1]+"  Knowledge: "+stats[2]+"%");
       activity(stats);
       day++;
@@ -54,7 +55,7 @@ public class HairMonopoly {
 
   /**************/
   public static void Day6(int[] stats,int start,int end){
-    System.out.printf("**************************** Weekend is coming%n");
+    System.out.printf("**************************** %nWeekend is coming%n");
     System.out.println("Surprise! Do you want to open it? yes/no");
     boolean open = TextIO.getlnBoolean();
     if(open){
@@ -143,8 +144,11 @@ public static int[] haircare(int[] stats){
    }else if(stats[0]>100){
      stats[0]=100;
    }
-   if(stats[2]>0){
+   if(stats[2]>100){
      stats[2]=100;
+   }
+   if(stats[2]<0){
+     stats[2]=0;
    }
    System.out.println("You lose 15% hair and obtain %10 knowledge.");
    return stats;
