@@ -1,6 +1,16 @@
+/**
+  HairMonopoly - this is a text-based game that challenges
+  player to take care of his/her hair,money and knowledge level
+  in a week. To win: more than 60% hair, more than 60% knowledge
+  @author Qi Hua, Irene Li, Lizzy Li, Iris Lyu, Difei Wu
+  @version 0.0.1
 
+*/
 public class HairMonopoly {
   public static boolean keepGoing = true;
+  /**
+  main() tests some of the method calls
+  */
   public static void main(String[] args){
     intro();
     int[] stats = {65,10,65};
@@ -11,7 +21,13 @@ public class HairMonopoly {
     FinalDay.finalday(stats);
   }
 
-/*****************/
+  /**
+  *  loop goes through the general loop of everyday in a week
+  *
+  * @param stats the int array that stores values for hair, money and knowledge
+  * @param start the start day of this loop(day in number)
+  * @param end the end day of this loop(day in number)
+  */
   public static void loop(int[] stats,int start,int end){
     for(int i=start;i<=end;i++){
       int day = i;
@@ -27,7 +43,11 @@ public class HairMonopoly {
     System.out.println("Hair: "+stats[0]+"%  Money: $"+stats[1]+"  Knowledge: "+stats[2]+"%");
   }
 
-/******************/
+  /**
+  *  activity points to the two choices for everyday
+  *
+  * @param stats the int array that stores values for hair, money and knowledge
+  */
   public static int[] activity(int[] stats){
     System.out.println("What would you like to do today? Choose 'study', 'work', or 'haircare'");
     stats = calculate(stats);
@@ -36,7 +56,11 @@ public class HairMonopoly {
     return stats;
   }
 
-/***********/
+  /**
+  *  calculate points to the three activities
+  *
+  * @param stats the int array that stores values for hair, money and knowledge
+  */
   public static int[] calculate(int[] stats){
     while(HairMonopoly.keepGoing){
       String activity = TextIO.getln();
@@ -54,7 +78,11 @@ public class HairMonopoly {
     return stats;
   }
 
-  /**************/
+  /**
+  *  Day6 points to the weekend activities
+  *
+  * @param stats the int array that stores values for hair, money and knowledge
+  */
   public static void Day6(int[] stats,int start,int end){
     System.out.printf("**************************** %nWeekend is coming%n");
     promptEnterKey.promptenterkey();
@@ -78,7 +106,10 @@ public class HairMonopoly {
       loop(stats,start,end);
     }
   }
-
+  /**
+  *  intro is a brief introduction to background of the game
+  *
+  */
   public static void intro(){
     System.out.println("Welcome to the game of Hair Monopoly!");
     System.out.println();
@@ -98,7 +129,12 @@ public class HairMonopoly {
   }
 
 
-/********/
+  /**
+  *  the following three methods are three activities that would affect parameter
+  * values
+  *
+  * @param stats the int array that stores values for hair, money and knowledge
+  */
 public static int[] haircare(int[] stats){
    if(stats[1]==0){
      System.out.println("You don't have any money left. Please choose another activity.");
