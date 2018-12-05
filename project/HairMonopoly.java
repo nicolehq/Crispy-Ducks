@@ -3,11 +3,11 @@ public class HairMonopoly {
   public static boolean keepGoing = true;
   public static void main(String[] args){
     intro();
-    int[] stats = {70,10,60};
-    int start=0;
-    int end=0;
-    loop(stats,start =1, end = 5);
-    Day6(stats,start,end);
+    int[] stats = {65,10,65};
+    promptEnterKey.promptenterkey();
+    loop(stats,1,5);
+    promptEnterKey.promptenterkey();
+    Day6(stats,6,7);
     FinalDay.finalday(stats);
   }
 
@@ -57,37 +57,32 @@ public class HairMonopoly {
   /**************/
   public static void Day6(int[] stats,int start,int end){
     System.out.printf("**************************** %nWeekend is coming%n");
+    promptEnterKey.promptenterkey();
     System.out.println("Surprise! Do you want to open it? yes/no");
     boolean open = TextIO.getlnBoolean();
     if(open){
-      System.out.println("Now you have the opportunity to participate in an event during the weekend. ");
-      System.out.println("If you don't want to use this opportunity, you would return to your normal schedule. Do you want to open the surprise?(yes/no)");
+      System.out.printf("Now you have the opportunity to participate in an event during the weekend. %nIf you don't want to use this opportunity, you would return to your normal schedule. Do you want to open the surprise?(yes/no)");
       while (HairMonopoly.keepGoing){
         String choice = TextIO.getlnWord();
         if(choice.equals("yes")){
           Surprise.surprise(stats);
           break;
         } else if (choice.equals("no")){
-          int[] statss = stats;
-          int startt = start;
-          int endd = end;
-          loop(stats,start=6,end=7);
+          loop(stats,start,end);
           break;
         } else{
           System.out.println("Error! Please re-enter:");
         }
       }
     }else{
-      int[] statss = stats;
-      int startt = start;
-      int endd = end;
-      loop(stats,start=6,end=7);
+      loop(stats,start,end);
     }
   }
 
   public static void intro(){
     System.out.println("Welcome to the game of Hair Monopoly!");
     System.out.println();
+    promptEnterKey.promptenterkey();
     System.out.println("Here is the instruction of the game: ");
     System.out.println("You are a super busy senior student, and your midterm is one week from now.");
     System.out.println("You will also take your senior portrait on that day.");
