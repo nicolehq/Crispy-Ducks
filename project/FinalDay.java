@@ -20,7 +20,7 @@ public class FinalDay{
       System.out.println("Congratulations! You passed your midterm and you look amazing in your senior portrait.");
       Sound.playSound("finalwin");
     } else if(stats[0]<60 && stats[2]>=60) {
-      System.out.println("You passed your midterm but you showed up to your senior portrait looking like...");
+      System.out.println("You passed your midterm but you showed up to your senior portrait with no hair");
       Sound.playSound("nohair");
     } else if (stats[0]>=60 && stats[2]<60){
       System.out.println("You look hot in your senior portrait but you failed the exam...");
