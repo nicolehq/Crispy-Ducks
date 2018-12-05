@@ -1,4 +1,4 @@
-package project;
+
 public class Surprise{
   public static int[] surprise(int[] stats){
     System.out.println("What a wonderful weekend! Your friend Tim invites you to do 3 activities with him.");
@@ -39,6 +39,7 @@ public class Surprise{
     int random = (int)(Math.random() * 50 + 1);
     if(random<11){
     System.out.println("Yay! You win 10 times your bet!");
+    Sound.playSound("winmoney");
     stats[1]=stats[1]+9*invest;
     } else{
     System.out.println("Uh-oh,you lose.");

@@ -1,4 +1,4 @@
-package project;
+
 public class HairMonopoly {
   public static boolean keepGoing = true;
   public static void main(String[] args){
@@ -17,6 +17,7 @@ public class HairMonopoly {
       int day = i;
       System.out.printf("****************************%n Day %d%n",day);
       System.out.println("Good morning. There is a bunch of hairs on your pillow (-5%). You forgot what you have learnt. (-5%)");
+      Sound.playSound("morning");
       stats[0] = stats[0]-5;
       stats[2] = stats[2]-5;
       System.out.println("Hair: "+stats[0]+"%  Money: $"+stats[1]+"  Knowledge: "+stats[2]+"%");
@@ -59,8 +60,8 @@ public class HairMonopoly {
     System.out.println("Surprise! Do you want to open it? yes/no");
     boolean open = TextIO.getlnBoolean();
     if(open){
-      System.out.println("Now you have the opportunity to participate in two events during the weekend. ");
-      System.out.println("If you don't want to use this opportunity, you would return to your normal schedule. (yes/no)");
+      System.out.println("Now you have the opportunity to participate in an event during the weekend. ");
+      System.out.println("If you don't want to use this opportunity, you would return to your normal schedule. Do you want to open the surprise?(yes/no)");
       while (HairMonopoly.keepGoing){
         String choice = TextIO.getlnWord();
         if(choice.equals("yes")){

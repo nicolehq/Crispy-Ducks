@@ -1,4 +1,4 @@
-package project;
+import java.util.concurrent.TimeUnit;
 public class FinalDay{
   public static void finalday(int[] stats){
     System.out.println();
@@ -18,13 +18,30 @@ public class FinalDay{
 
     if (stats[0]>=60 && stats[2]>=60){
       System.out.println("Congratulations! You passed your midterm and you look amazing in your senior portrait.");
+      Sound.playSound("finalwin");
     } else if(stats[0]<60 && stats[2]>=60) {
-      System.out.println("You passed your midterm but you showed up to your senior portrait looking like this...");
+      System.out.println("You passed your midterm but you showed up to your senior portrait looking like...");
+      Sound.playSound("nohair");
     } else if (stats[0]>=60 && stats[2]<60){
       System.out.println("You look hot in your senior portrait but you failed the exam...");
+      Sound.playSound("notpass");
     } else{
       System.out.println("You didn't pass your exam and your senior portrait looked pathetic...");
+      Sound.playSound("notpass");
+      try{
+          TimeUnit.SECONDS.sleep(2);
+      }catch(InterruptedException ex){
+        Thread.currentThread().interrupt();
+      }
+      Sound.playSound("nohair");
     }
+    try{
+        TimeUnit.SECONDS.sleep(5);
+    }catch(InterruptedException ex){
+      Thread.currentThread().interrupt();
+    }
+
+
   }
 
   public static void makeDecision(int[] stats){
