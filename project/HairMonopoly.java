@@ -123,7 +123,7 @@ public static int[] haircare(int[] stats){
  }
 
  public static int[] work(int stats[]){
-   stats[0] = stats[0]- 5;
+   //stats[0] = stats[0]- 5;
    stats[1] = stats[1] + 10;
    if(stats[0]<0){
      stats[0]=0;
@@ -133,13 +133,13 @@ public static int[] haircare(int[] stats){
    if(stats[1]<0){
      stats[1]=0;
    }
-   System.out.println("You lose 5% hair and obtain 10 dollors.");
+   System.out.println("You obtained 10 dollors.");
    return stats;
  }
 
  public static int[] study(int stats[]){
-   stats[0] = stats[0]- 15;
-   stats[2] = stats[2] + 10;
+   stats[0] = stats[0] - 10;
+   stats[2] = stats[2] + 15;
    if(stats[0]<0){
      stats[0]=0;
    }else if(stats[0]>100){
@@ -151,7 +151,7 @@ public static int[] haircare(int[] stats){
    if(stats[2]<0){
      stats[2]=0;
    }
-   System.out.println("You lose 15% hair and obtain %10 knowledge.");
+   System.out.println("You lost 10% hair but obtained 15% knowledge.");
    return stats;
  }
 }
